@@ -1,0 +1,101 @@
+2023-08-16 16:12:47,083 [INFO] Initialized logging. log_filename = gas_prepared_2-way5-shot_T6n450q_E2n450q_V8n110q/run_log.log
+2023-08-16 16:12:47,083 [INFO] Running script with following parameters
+{'gas_datasets_dir': 'gas',
+ 'gas_files_list': ['gas/gas1.csv'],
+ 'hdf_key': 'gas',
+ 'k_shot': 5,
+ 'n_test': 2,
+ 'n_train': 6,
+ 'n_val': 8,
+ 'output_dir': 'gas_prepared_2-way5-shot_T6n450q_E2n450q_V8n110q',
+ 'output_dir_prefix': 'gas_prepared',
+ 'q_test': 450,
+ 'q_train': 450,
+ 'q_val': 110}
+2023-08-16 16:12:47,083 [INFO] Loading datasets
+2023-08-16 16:12:47,084 [INFO] Loading datasets in files
+2023-08-16 16:12:47,226 [INFO] None
+2023-08-16 16:12:47,227 [INFO] Loading datasets complete
+2023-08-16 16:12:47,234 [INFO] Total count = 97019
+2023-08-16 16:12:47,240 [INFO] Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2023-08-16 16:12:47,240 [INFO] NumExpr defaulting to 8 threads.
+2023-08-16 16:12:47,240 [INFO] Label counts below
+2023-08-16 16:12:47,241 [INFO] 
+Normal    61156
+CMRI      15466
+MPCI       7637
+Recon      6805
+NMR        2763
+DOS        1837
+MSCI        782
+MFCI        573
+Name: Label, dtype: int64
+2023-08-16 16:12:47,266 [INFO] Label percentages below
+2023-08-16 16:12:47,267 [INFO] 
+Normal   0.6304
+CMRI     0.1594
+MPCI     0.0787
+Recon    0.0701
+NMR      0.0285
+DOS      0.0189
+MSCI     0.0081
+MFCI     0.0059
+Name: Label, dtype: float64
+2023-08-16 16:12:47,720 [INFO] Train set :
+NMR       455
+Recon     455
+Normal    455
+CMRI      455
+DOS       455
+MPCI      455
+Name: Label, dtype: int64
+2023-08-16 16:12:47,721 [INFO] Test set :
+MFCI    455
+MSCI    455
+Name: Label, dtype: int64
+2023-08-16 16:12:47,722 [INFO] Validation set :
+NMR       115
+Normal    115
+MFCI      115
+MSCI      115
+Recon     115
+CMRI      115
+MPCI      115
+DOS       115
+Name: Label, dtype: int64
+2023-08-16 16:12:47,728 [INFO] Remaining df :
+Normal    60586
+CMRI      14896
+MPCI       7067
+Recon      6235
+NMR        2193
+DOS        1267
+MSCI        212
+MFCI          3
+Name: Label, dtype: int64
+2023-08-16 16:12:47,728 [INFO] Saving prepared datasets (train, val, test) to: gas_prepared_2-way5-shot_T6n450q_E2n450q_V8n110q
+2023-08-16 16:12:47,728 [INFO] Writing dataset to HDF5 format. filename=gas_prepared_2-way5-shot_T6n450q_E2n450q_V8n110q/x_meta_train.h5
+2023-08-16 16:12:47,780 [INFO] Writing complete. time_to_write=0.051438093185424805
+2023-08-16 16:12:47,781 [INFO] Writing dataset to HDF5 format. filename=gas_prepared_2-way5-shot_T6n450q_E2n450q_V8n110q/y_meta_train.h5
+2023-08-16 16:12:47,786 [INFO] Writing complete. time_to_write=0.004986763000488281
+2023-08-16 16:12:47,786 [INFO] Writing dataset to HDF5 format. filename=gas_prepared_2-way5-shot_T6n450q_E2n450q_V8n110q/x_meta_test.h5
+2023-08-16 16:12:47,795 [INFO] Writing complete. time_to_write=0.008975505828857422
+2023-08-16 16:12:47,795 [INFO] Writing dataset to HDF5 format. filename=gas_prepared_2-way5-shot_T6n450q_E2n450q_V8n110q/y_meta_test.h5
+2023-08-16 16:12:47,800 [INFO] Writing complete. time_to_write=0.004987001419067383
+2023-08-16 16:12:47,800 [INFO] Writing dataset to HDF5 format. filename=gas_prepared_2-way5-shot_T6n450q_E2n450q_V8n110q/x_meta_val.h5
+2023-08-16 16:12:47,809 [INFO] Writing complete. time_to_write=0.008975505828857422
+2023-08-16 16:12:47,809 [INFO] Writing dataset to HDF5 format. filename=gas_prepared_2-way5-shot_T6n450q_E2n450q_V8n110q/y_meta_val.h5
+2023-08-16 16:12:47,813 [INFO] Writing complete. time_to_write=0.004987478256225586
+2023-08-16 16:12:47,813 [INFO] Writing dataset to HDF5 format. filename=gas_prepared_2-way5-shot_T6n450q_E2n450q_V8n110q/remaining_df.h5
+2023-08-16 16:12:48,018 [INFO] Writing complete. time_to_write=0.2049551010131836
+2023-08-16 16:12:48,018 [INFO] Saving complete
+2023-08-16 16:12:48,018 [INFO] Meta train dataset shape = (2730, 26)
+2023-08-16 16:12:48,019 [INFO] Meta test dataset shape = (910, 26)
+2023-08-16 16:12:48,019 [INFO] Meta val dataset shape = (920, 26)
+2023-08-16 16:12:48,019 [INFO] 6 Labels used int meta train = 
+CMRI, DOS, MPCI, NMR, Normal, Recon
+2023-08-16 16:12:48,020 [INFO] 2 Labels used int meta test = 
+MFCI, MSCI
+2023-08-16 16:12:48,020 [INFO] 8 Labels used int meta val = 
+CMRI, DOS, MPCI, NMR, Normal, Recon, MFCI, MSCI
+2023-08-16 16:12:48,022 [INFO] Data preparation complete

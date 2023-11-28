@@ -1,0 +1,72 @@
+services:
+  a-domain:
+    image: seehar/tt-auth:1.1
+    restart: always
+    container_name: a-domain
+    mem_limit: 512m
+    volumes:
+      - .:/root/cs-auth
+    networks:
+      - tpm-network
+    ports:
+      - "8001:8001"
+      - "8002:8002"
+    command:
+     - sh
+     - -c
+     - | 
+       cd /root/cs-auth
+       gunicorn app.business.main:app -b 0.0.0.0:8001  -w 1 -k uvicorn.workers.UvicornH11Worker --daemon
+       gunicorn app.authentication.main:app -b 0.0.0.0:8002  -w 1 -k uvicorn.workers.UvicornH11Worker --daemon
+       echo "========================================"
+       echo "a-domain success"
+       echo "========================================"
+       tail -f /dev/null
+
+  b-domain:
+    image: seehar/tt-auth:1.1
+    restart: always
+    container_name: b-domain
+    mem_limit: 512m
+    volumes:
+      - .:/root/cs-auth
+    networks:
+      - tpm-network
+    ports:
+      - "9001:9001"
+      - "9002:9002"
+    command:
+     - sh
+     - -c
+     - | 
+       cd /root/cs-auth
+       gunicorn app.business.main:app -b 0.0.0.0:9001  -w 1 -k uvicorn.workers.UvicornH11Worker --daemon
+       gunicorn app.authentication.main:app -b 0.0.0.0:9002  -w 1 -k uvicorn.workers.UvicornH11Worker --daemon
+       echo "========================================"
+       echo "b-domain success"
+       echo "========================================"
+       tail -f /dev/null
+
+  client:
+    image: seehar/tt-auth:1.1
+    restart: always
+    container_name: client
+    mem_limit: 512m
+    volumes:
+      - .:/root/cs-auth
+    networks:
+      - tpm-network
+    environment:
+      PYTHONPATH: /root/cs-auth
+    command:
+     - sh
+     - -c
+     - | 
+       cd /root/cs-auth
+       echo "========================================"
+       echo "client success"
+       echo "========================================"
+       tail -f /dev/null
+
+networks:
+  tpm-network:

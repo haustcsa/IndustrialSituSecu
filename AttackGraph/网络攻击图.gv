@@ -1,0 +1,81 @@
+// comment
+digraph "网络攻击图" {
+	graph [rankdir=TB]
+	node [color=black fontcolor=black fontname=FangSong fontsize=12 shape=box]
+	edge [color=black fontcolor=black fontname="Times New Roman" fontsize=10]
+	0 [label=PLC6 color=black fontcolor=black shape=ellipse]
+	1 [label="APP(User)
+CVE-2022-27280
+APP(Admin)" color=black fontcolor=black]
+	2 [label="NONE
+CVE-2017-6034
+APP(Admin)" color=black fontcolor=black]
+	3 [label="NONE
+CVE-2017-5155
+APP(Admin)" color=black fontcolor=black]
+	4 [label="NONE
+CVE-2017-6017
+APP(Admin)" color=black fontcolor=black]
+	5 [label="OS(User)
+CVE-2018-8838
+APP(Admin)" color=black fontcolor=black]
+	6 [label="APP(User)
+CVE-2016-8377
+APP(Admin)" color=black fontcolor=black]
+	7 [label=Historian color=black fontcolor=black shape=ellipse]
+	8 [label=Router1 color=black fontcolor=black shape=ellipse]
+	9 [label=SCADA color=black fontcolor=black shape=ellipse]
+	10 [label="NONE
+CVE-2018-7812
+APP(Admin)" color=black fontcolor=black]
+	11 [label=PLC5 color=black fontcolor=black shape=ellipse]
+	12 [label=PLC1 color=black fontcolor=black shape=ellipse]
+	13 [label="NONE
+CVE-2017-6032
+APP(User)" color=black fontcolor=black]
+	14 [label="NONE
+CVE-2020-7538
+APP(Admin)" color=black fontcolor=black]
+	15 [label=Attacker color=black fontcolor=black shape=ellipse]
+	16 [label=HMI color=black fontcolor=black shape=ellipse]
+	17 [label=Router2 color=black fontcolor=black shape=ellipse]
+	18 [label=PLC3 color=black fontcolor=black shape=ellipse]
+	19 [label=PLC4 color=black fontcolor=black shape=ellipse]
+	20 [label=EWS color=black fontcolor=black shape=ellipse]
+	21 [label="NONE
+CVE-2021-21561
+APP(Admin)" color=black fontcolor=black]
+	22 [label="NONE
+CVE-2018-17916
+APP(Admin)" color=black fontcolor=black]
+	23 [label="NONE
+CVE-2016-6415
+APP(Admin)" color=black fontcolor=black]
+	24 [label=PLC2 color=black fontcolor=black shape=ellipse]
+	15 -> 3 [color=black dir=forward]
+	3 -> 7 [label=0.349 color=black dir=forward]
+	7 -> 23 [color=black dir=forward]
+	23 -> 8 [label=0.481 color=black dir=forward]
+	8 -> 21 [color=black dir=forward]
+	8 -> 5 [color=black dir=forward]
+	8 -> 22 [color=black dir=forward]
+	21 -> 9 [label=0.380 color=black dir=forward]
+	5 -> 20 [label=0.338 color=black dir=forward]
+	22 -> 16 [label=0.727 color=black dir=forward]
+	9 -> 1 [color=black dir=forward]
+	20 -> 1 [color=black dir=forward]
+	16 -> 1 [color=black dir=forward]
+	1 -> 17 [label=0.476 color=black dir=forward]
+	17 -> 14 [color=black dir=forward]
+	17 -> 6 [color=black dir=forward]
+	17 -> 13 [color=black dir=forward]
+	17 -> 2 [color=black dir=forward]
+	17 -> 10 [color=black dir=forward]
+	17 -> 4 [color=black dir=forward]
+	14 -> 12 [label=0.596 color=black dir=forward]
+	6 -> 24 [label=0.590 color=black dir=forward]
+	13 -> 18 [label=0.426 color=black dir=forward]
+	2 -> 19 [label=0.752 color=black dir=forward]
+	10 -> 11 [label=0.541 color=black dir=forward]
+	4 -> 0 [label=0.575 color=black dir=forward]
+}
